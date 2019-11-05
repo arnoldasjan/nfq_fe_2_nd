@@ -14,8 +14,27 @@ class App extends React.Component {
         this.state = {
             list: [],
             genres_list: [],
+            // favorites: [],
         };
     }
+
+    // onAddItem = (newmovie) => {
+    //     this.setState(state => {
+    //         const favorites = state.favorites.concat(newmovie);
+    //         return {
+    //             favorites,
+    //         };
+    //     });
+    // };
+
+    // onRemoveItem = (title) => {
+    //     this.setState(state => {
+    //         const favorites = state.favorites.filter(item => item !== title);
+    //         return {
+    //             favorites,
+    //         };
+    //     });
+    // };
 
     componentDidMount() {
         const request = axios
@@ -64,7 +83,9 @@ class App extends React.Component {
                         rating={card.vote_average}
                         description={card.overview}
                         votes={card.vote_count}
-                        isLiked={false}
+                        // addFavorite={this.onAddItem(card.title)}
+                        // removeFavorite={this.onRemoveItem(card.title)}
+                        // favoritesList = {this.state.favorites}
                     />
                 ))}
             </div>

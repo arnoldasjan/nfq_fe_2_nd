@@ -14,9 +14,13 @@ export default class Card extends React.Component{
         }
     }
 
+    // sendState (title) {
+    //     this.props.favorites.includes(title) ? this.props.addFavorite() : this.props.removeFavorite();
+    // }
+
     render() {
         const { showDescription} = this.state;
-        const { title, backgroundImage, date, description, rating, votes, isLiked } = this.props;
+        const { title, backgroundImage, date, description, rating, votes } = this.props;
 
         return (
         <div className="card">
@@ -30,9 +34,8 @@ export default class Card extends React.Component{
         </div>
     
         <div className="card__like">
-            <i onClick={() => {this.setState({
-                isLiked: isLiked ? false : true
-            });}} className={isLiked ? "fa fa-heart" : "fa fa-heart-o"}></i>
+            {/*<i onClick={() => {this.sendState(title)}} className={favorites.includes(title) ? "fa fa-heart" : "fa fa-heart-o"}></i>*/}
+            <i className={false ? "fa fa-heart" : "fa fa-heart-o"}></i>
         </div>
     
         <div className="card__subtitle">
